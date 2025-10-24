@@ -1,0 +1,159 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --text:#e6eef8;
+  --muted:#9fb0c8;
+  --accent:#4f9cff;
+  --radius:10px;
+  --container:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  color:var(--text);
+  background:linear-gradient(180deg,#071022 0%, #0a1422 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+
+.site-header{padding:.75rem 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;justify-content:space-between;height:180px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:1rem}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;cursor:pointer}
+.btn-primary{background:var(--accent);color:white}
+.btn-outline{border:1px solid rgba(255,255,255,.08);color:var(--muted);padding:.45rem .65rem}
+.btn-ghost{background:transparent;color:var(--accent);border:1px solid rgba(79,156,255,.12)}
+
+/* Hero */
+.hero{padding:2.5rem 0}
+.hero-{align-items:center}
+.hero-copy h1{font-size:1.75rem;margin:.2rem 0}
+.tagline{color:var(--muted);margin:0 0 1rem}
+.hero-media img{width:100%;max-width:250px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(2,6,23,.6)}
+
+/* trust list */
+.trust-list{display:flex;gap:1rem;padding:0;margin:1rem 0 0;list-style:none;color:var(--muted)}
+
+/* features */
+.features{padding:2rem 0}
+.feature-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.feature{background:rgba(255,255,255,.03);padding:1rem;border-radius:8px}
+
+/* screenshots */
+.screenshots{padding:1.5rem 0}
+.screenshot-row{display:flex;gap:1rem;overflow:hidden}
+.screenshot-row img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,.6)}
+
+/* download */
+.download{padding:2rem 0;text-align:center}
+.download-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn-disabled {
+ background:#cfcfcf; / gray background /
+ color:#6b6b6b; / muted text /
+ border-color:transparent;
+ cursor:not-allowed; / show disabled cursor /
+ box-shadow:none;
+ text-decoration:none;
+}
+
+./* Ensure buttons don't stretch into long narrow shapes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem 1rem;
+  min-width: 120px;       /* prevents extremely narrow buttons */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+/* Layout for the download buttons */
+.download-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Disabled appearance for the coming-soon button */
+.btn-disabled {
+  background: #cfcfcf;
+  color: #6b6b6b;
+  border: 1px solid rgba(0,0,0,0.06);
+  cursor: not-allowed;
+  pointer-events: auto; /* we intercept clicks in JS; keep pointer-events so keyboard still works */
+}
+
+/* Prevent hover from making it look active */
+.btn-disabled:hover,
+.btn-disabled:focus {
+  background: #cfcfcf;
+  color: #6b6b6b;
+  outline: none;
+}
+
+/* Modal (hidden by default) */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.modal { display: none; position: fixed; inset: 0; z-index: 1000; align-items:center; justify-content:center; }
+.modal[aria-hidden="false"] { display: flex; }
+.modal-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.modal-panel { position:relative; z-index:1; background:#fff; color:#111; padding:1rem; border-radius:8px; max-width:420px; width:90%; }
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+/* backdrop covers the page */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* panel sits above the backdrop */
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  color: #111;
+  padding: 1.25rem;
+  border-radius: 10px;
+  max-width: 420px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* close button */
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+/* footer */
+.site-footer{padding:1.25rem 0;border-top:1px solid rgba(255,255,255,.03);color:var(--muted);text-align:center}
+
+/* responsive (tablet & desktop) */
+@media(min-width:768px){
+  .hero-grid{grid-template-columns:1fr 1fr}
+  .feature-grid{grid-template-columns:repeat(3,1fr)}
+  .screenshot-row img{width:48%}
+}
